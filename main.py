@@ -72,13 +72,13 @@ class Queue:
         return temp_str
     
     def enqueue(self, value: int):
-        tambah_node = Node(value)
+        enqueue_node = Node(value)
         if self.head is None:
-            self.head = tambah_node
-            self.tail = tambah_node
+            self.head = enqueue_node
+            self.tail = enqueue_node
         else:
-            self.tail._next = tambah_node
-            self.tail = tambah_node
+            self.tail._next = enqueue_node
+            self.tail = enqueue_node
         self.lenght += 1
         return True
     
