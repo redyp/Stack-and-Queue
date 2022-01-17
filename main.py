@@ -1,10 +1,12 @@
 from __future__ import annotations
 from dataclasses import dataclass, field
 
+@dataclass
 class Node:
     value: int
     _next: Node = None
-    
+
+@dataclass
 class Stack:
     value: int = field(repr=False)
     head: Node = field(init=False)
