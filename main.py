@@ -71,3 +71,26 @@ class Queue:
         temp_str += "None"
         return temp_str
     
+    def tambah(self, value: int):
+        tambah_node = Node(value)
+        if self.head is None:
+            self.head = tambah_node
+            self.tail = tambah_node
+        else:
+            self.tail._next = tambah_node
+            self.tail = tambah_node
+        self.lenght += 1
+        return True
+    
+    def keluar(self) -> Node:
+        if self.lenght == 0:
+            return None
+        temp = self.head
+        if self.lenght == 1:
+            self.head = None
+            self.tail = None
+        else:
+            self.head = temp._next
+            temp._next = None
+        self.lenght -= 1
+        return temp
