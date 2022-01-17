@@ -27,3 +27,13 @@ class Stack:
             temp = temp._next
         temp_str += "None"
         return temp_str
+    
+    def push(self, value: int):
+        push_node = Node(value)
+        if self.head is None:
+            self.head = push_node
+        else:
+            push_node._next = self.head
+            self.head = push_node
+        self.lenght += 1
+        return True
